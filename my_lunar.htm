@@ -1,0 +1,79 @@
+<! DOCTYPE html>
+<html>
+<title>Lunar Calendar</title>
+<head>
+   <link href="calendar.css" rel="stylesheet" type="text/css" />
+   <link href='http://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+   <script src="lunarcal.js" type="text/javascript"></script>
+
+   <script type="text/javascript">
+      var calendarDay = new Date();
+      function writeDate(calendarDay) {
+         var thisYear = calendarDay.getFullYear();
+         var thisMonth = calendarDay.getMonth()+1;
+         var monthName = new Array("January", "February", "March", "April", "May", 
+         "June", "July", "August", "September", "October", "November", "December");
+
+         var thisMonth = calendarDay.getMonth();
+         var thisDay = calendarDay.getDate();
+         var weekDay = calendarDay.getDay();
+
+         document.write(monthName[thisMonth] + " " + thisDay + ", " + thisYear);
+      }
+   </script>
+</head>
+
+<body>
+<div class="doc">
+   <div id="head">
+      <h1><center>Lunar Calendar</center></h1>
+      <h3><center>Today</center></h3>
+   </div>
+   <div class="today">
+      <script type="text/javascript">
+         writeDate(calendarDay);
+         document.write("<br>");
+         document.write("<img src='phases/phase" + calcMPhase(calendarDay) + ".png' class='moon'><br>");
+         document.write("<span class='credit'>Image Credit: nasa.gov</span><br><br><span style='font-size: 20px'>");
+         if (phase == "0") {
+            document.write("New Moon");
+            }
+            else if (phase == "1" || "2" || "3") {
+               document.write("Waxing Crescent");
+            }
+            else if (phase == "4") {
+               document.write("First Quarter");
+            }
+            else if (phase == "5" || "6" || "7") {
+               document.write("Waxing Gibbous");
+            }
+            else if (phase == "8") {
+               document.write("Full Moon");
+            }
+            else if (phase == "9" || "10" || "11") {
+               document.write("Waning Gibbous");
+            }
+            else if (phase == "12") {
+               document.write("Last Quarter");
+            }
+            else {
+               document.write("Waning Crescent");
+            }
+            document.write("</span>");
+      </script>
+   </div>
+   <br><br>
+   <div id="arrow-right" class="arrow-right"></div><div id="show-month">&nbsp;&nbsp;&nbsp;<a href="#" onclick="show()">Monthly Lunar Calendar</a></div>
+   <div id="hide-month" style="display: none">&nbsp;&nbsp;&nbsp;<a href="#" onclick="hide()">Hide Monthly Lunar Calendar</a></div><br>
+   <span class="fading_line"></span>
+
+   <div id="lunar_cal" style="display: none">
+   <script type="text/javascript">
+      lunar_calendar(calendarDay);
+   </script>
+   </div>
+
+</div>
+</body>
+</html>

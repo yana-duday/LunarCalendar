@@ -1,0 +1,91 @@
+
+body {
+	background: #000;
+	color: #fff;
+	font-family: 'Inconsolata';
+}
+
+h1 {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 50px;
+	color: #fff;
+}
+
+a:link, a:visited {
+	color: #C0C0C0;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.today {
+	text-align: center;
+	font-family: 'Inconsolata';
+}
+
+.doc {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.credit {
+	font-size: 9px;
+	padding-left: 400px;
+	color: #767676;
+	font-family: 'Inconsolata';
+}
+
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	position: relative;
+	float: left;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-left: 8px solid #C0C0C0;
+}
+
+.fading_line{ 
+    display:block;
+    border:none;
+    color:white;
+    height: 1px;
+    background:black;
+    background: -webkit-linear-gradient(left,rgb(199,199,199),rgb(0,0,0));
+}
+
+#calendar_table {
+	padding: 10px;
+	width: 600px;
+}
+
+#calendar_head {
+	padding: 10px;
+}
+
+#calendar_weekdays {
+	padding: 10px;
+}
+
+@media (max-width: 600px) {
+	h1 {
+		font-size: 25px;
+	}
+	.doc {
+		width: 80%;
+	}
+	.moon {
+		width: 50%;
+	}
+	#calendar_table {
+		width: 300px;
+	}
+	.fading_line {
+		width: 50%;
+	}
+	.credit {
+		padding-left: 300px;
+	}
+}
